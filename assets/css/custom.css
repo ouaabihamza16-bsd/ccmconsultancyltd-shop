@@ -1,0 +1,97 @@
+/* CCM CONSULTANCY LTD - small additions to Tailwind */
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+:focus-visible {
+  outline: 3px solid #2A9D8F;
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -4rem;
+  z-index: 100;
+  transition: top 0.15s ease;
+}
+
+.skip-link:focus {
+  top: 1rem;
+}
+
+.hero-bg {
+  background:
+    radial-gradient(60rem 30rem at 85% -10%, rgba(42, 157, 143, 0.28), transparent 60%),
+    radial-gradient(40rem 24rem at -10% 110%, rgba(141, 153, 174, 0.22), transparent 60%),
+    linear-gradient(160deg, #14213D 0%, #1F3A5F 100%);
+}
+
+.grid-lines {
+  background-image:
+    linear-gradient(rgba(245, 247, 250, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(245, 247, 250, 0.05) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+/* Legal dialogs */
+dialog.legal {
+  width: min(46rem, calc(100vw - 2rem));
+  max-height: calc(100vh - 3rem);
+  padding: 0;
+  border: 0;
+  border-radius: 1rem;
+  box-shadow: 0 25px 60px rgba(20, 33, 61, 0.35);
+}
+
+dialog.legal::backdrop {
+  background: rgba(20, 33, 61, 0.7);
+}
+
+dialog.legal h3 {
+  font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+  font-weight: 700;
+  color: #14213D;
+  margin-top: 1.5rem;
+  margin-bottom: 0.4rem;
+  font-size: 1.05rem;
+}
+
+dialog.legal p,
+dialog.legal li {
+  color: #374151;
+  line-height: 1.65;
+  font-size: 0.95rem;
+}
+
+dialog.legal ul {
+  list-style: disc;
+  padding-left: 1.25rem;
+  margin-top: 0.4rem;
+}
+
+dialog.legal a {
+  color: #1E7A6F;
+  text-decoration: underline;
+}
+
+body.modal-open {
+  overflow: hidden;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
